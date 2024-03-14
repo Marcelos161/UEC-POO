@@ -1,0 +1,9 @@
+#statusLutadores {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#selectLutadores {
+    display: flex;
+    justify-content: space-evenly;
+}

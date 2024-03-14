@@ -10,13 +10,16 @@
         private $derrotas;
         private $empates;
 
-    public function __construct($nome, $nacionalidade, $idade, $altura, $peso) {
+    public function __construct($nome, $nacionalidade, $idade, $altura, $peso, $vitorias, $derrotas, $empates) {
         $this->nome = $nome;
         $this->nacionalidade = $nacionalidade;
         $this->idade = $idade;
         $this->altura = $altura;
         $this->peso = $peso;
-            
+        $this->vitorias = $vitorias;
+        $this->derrotas = $derrotas;
+        $this->empates = $empates;
+
         if($this->peso <= 80) {
             $this->categoria = "Leve";
         } else if($this->peso <= 90) {
@@ -120,16 +123,15 @@
     }
     public function status() {
         echo "Status do Lutador";
-        echo "<p>Nome{$this->getNome()}</p>";
-        echo "<p>Nacionalidade{$this->getNacionalidade()}</p>";
-        echo "<p>Idade{$this->getIdade()}</p>";
-        echo "<p>altura{$this->getAltura()} m</p>";
-        echo "<p>peso{$this->getPeso()} KG</p>";
-        echo "<p>Categoria{$this->getCategoria()}</p>";
-        echo "<p>N de Vitorias{$this->getVitorias()}</p>";
-        echo "<p>N de Derrotas{$this->getDerrotas()}</p>";
-        echo "<p>N de Empates{$this->getEmpates()}</p>";
-        echo "Fim do Status";
+        echo "<h3>Nome: {$this->getNome()}</h3>";
+        echo "<p>Nacionalidade: {$this->getNacionalidade()}</p>";
+        echo "<p>Idade: {$this->getIdade()}</p>";
+        echo "<p>altura: {$this->getAltura()} m</p>";
+        echo "<p>peso: {$this->getPeso()} KG</p>";
+        echo "<p>Categoria: {$this->getCategoria()}</p>";
+        echo "<p>N de Vitorias: {$this->getVitorias()}</p>";
+        echo "<p>N de Derrotas: {$this->getDerrotas()}</p>";
+        echo "<p>N de Empates: {$this->getEmpates()}</p>";
     }
     public function ganharLuta() {
         $this->setVitorias($this->getVitorias() + 1);
